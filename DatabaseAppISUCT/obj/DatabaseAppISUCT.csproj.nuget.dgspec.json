@@ -1,0 +1,78 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\m1sty\\Desktop\\Programing\\DataBaseApp\\DatabaseAppISUCT\\DatabaseAppISUCT.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\m1sty\\Desktop\\Programing\\DataBaseApp\\DatabaseAppISUCT\\DatabaseAppISUCT.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\m1sty\\Desktop\\Programing\\DataBaseApp\\DatabaseAppISUCT\\DatabaseAppISUCT.csproj",
+        "projectName": "DatabaseAppISUCT",
+        "projectPath": "C:\\Users\\m1sty\\Desktop\\Programing\\DataBaseApp\\DatabaseAppISUCT\\DatabaseAppISUCT.csproj",
+        "packagesPath": "C:\\Users\\m1sty\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\m1sty\\Desktop\\Programing\\DataBaseApp\\DatabaseAppISUCT\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\m1sty\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "MaterialSkin.2": {
+              "target": "Package",
+              "version": "[2.3.1, )"
+            },
+            "Microsoft.Windows.SDK.Contracts": {
+              "target": "Package",
+              "version": "[10.0.22000.196, )"
+            },
+            "System.Runtime.InteropServices.WindowsRuntime": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "System.Runtime.WindowsRuntime": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            },
+            "System.Runtime.WindowsRuntime.UI.Xaml": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            }
+          },
+          "imports": [
+            "uap10.0.22000"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

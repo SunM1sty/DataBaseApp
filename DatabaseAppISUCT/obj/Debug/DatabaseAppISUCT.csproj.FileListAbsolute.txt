@@ -1,0 +1,54 @@
+C:\Users\m1sty\Desktop\Programing\Rider projects\DatabaseAppISUCT\DatabaseAppISUCT\bin\Debug\DatabaseAppISUCT.exe.config
+C:\Users\m1sty\Desktop\Programing\Rider projects\DatabaseAppISUCT\DatabaseAppISUCT\bin\Debug\DatabaseAppISUCT.exe
+C:\Users\m1sty\Desktop\Programing\Rider projects\DatabaseAppISUCT\DatabaseAppISUCT\bin\Debug\DatabaseAppISUCT.pdb
+C:\Users\m1sty\Desktop\Programing\Rider projects\DatabaseAppISUCT\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.csproj.AssemblyReference.cache
+C:\Users\m1sty\Desktop\Programing\Rider projects\DatabaseAppISUCT\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.csproj.SuggestedBindingRedirects.cache
+C:\Users\m1sty\Desktop\Programing\Rider projects\DatabaseAppISUCT\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.Form1.resources
+C:\Users\m1sty\Desktop\Programing\Rider projects\DatabaseAppISUCT\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.Properties.Resources.resources
+C:\Users\m1sty\Desktop\Programing\Rider projects\DatabaseAppISUCT\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.csproj.GenerateResource.cache
+C:\Users\m1sty\Desktop\Programing\Rider projects\DatabaseAppISUCT\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.csproj.CoreCompileInputs.cache
+C:\Users\m1sty\Desktop\Programing\Rider projects\DatabaseAppISUCT\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.exe
+C:\Users\m1sty\Desktop\Programing\Rider projects\DatabaseAppISUCT\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.pdb
+C:\Users\m1sty\Desktop\Programing\Rider projects\DatabaseAppISUCT\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.Form2.resources
+C:\Users\m1sty\Desktop\Programing\Rider projects\DatabaseAppISUCT\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.Form3.resources
+C:\Users\m1sty\Desktop\Programing\Rider projects\DatabaseAppISUCT\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.Form4.resources
+C:\Users\m1sty\Desktop\Programing\Rider projects\DatabaseAppISUCT\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.Form5.resources
+C:\Users\m1sty\Desktop\Programing\Rider projects\DatabaseAppISUCT\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.Form6.resources
+C:\Users\m1sty\Desktop\Programing\DatabaseApplication\DatabaseAppISUCT\bin\Debug\DatabaseAppISUCT.exe.config
+C:\Users\m1sty\Desktop\Programing\DatabaseApplication\DatabaseAppISUCT\bin\Debug\DatabaseAppISUCT.exe
+C:\Users\m1sty\Desktop\Programing\DatabaseApplication\DatabaseAppISUCT\bin\Debug\DatabaseAppISUCT.pdb
+C:\Users\m1sty\Desktop\Programing\DatabaseApplication\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.csproj.AssemblyReference.cache
+C:\Users\m1sty\Desktop\Programing\DatabaseApplication\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.csproj.SuggestedBindingRedirects.cache
+C:\Users\m1sty\Desktop\Programing\DatabaseApplication\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.Properties.Resources.resources
+C:\Users\m1sty\Desktop\Programing\DatabaseApplication\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.csproj.GenerateResource.cache
+C:\Users\m1sty\Desktop\Programing\DatabaseApplication\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.csproj.CoreCompileInputs.cache
+C:\Users\m1sty\Desktop\Programing\DatabaseApplication\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.exe
+C:\Users\m1sty\Desktop\Programing\DatabaseApplication\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.pdb
+C:\Users\m1sty\Desktop\Programing\DatabaseApplication\DatabaseAppISUCT\bin\Debug\MaterialSkin.dll
+C:\Users\m1sty\Desktop\Programing\DatabaseApplication\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.csproj.CopyComplete
+C:\Users\m1sty\Desktop\Programing\DatabaseApplication\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.MainPageForm.resources
+C:\Users\m1sty\Desktop\Programing\DatabaseApplication\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.FormTypeMachine.resources
+C:\Users\m1sty\Desktop\Programing\DatabaseApplication\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.FormMachine.resources
+C:\Users\m1sty\Desktop\Programing\DatabaseApplication\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.FormTypeRepair.resources
+C:\Users\m1sty\Desktop\Programing\DatabaseApplication\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.FormRepair.resources
+C:\Users\m1sty\Desktop\Programing\DatabaseApplication\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.FormStoredProcedure.resources
+C:\Users\m1sty\Desktop\Programing\DatabaseApplication\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.FormSettings.resources
+C:\Users\m1sty\Desktop\Programing\DataBaseApp\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.csproj.AssemblyReference.cache
+C:\Users\m1sty\Desktop\Programing\DataBaseApp\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.csproj.SuggestedBindingRedirects.cache
+C:\Users\m1sty\Desktop\Programing\DataBaseApp\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.FormTypeMachine.resources
+C:\Users\m1sty\Desktop\Programing\DataBaseApp\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.FormMachine.resources
+C:\Users\m1sty\Desktop\Programing\DataBaseApp\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.FormTypeRepair.resources
+C:\Users\m1sty\Desktop\Programing\DataBaseApp\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.FormRepair.resources
+C:\Users\m1sty\Desktop\Programing\DataBaseApp\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.FormStoredProcedure.resources
+C:\Users\m1sty\Desktop\Programing\DataBaseApp\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.FormSettings.resources
+C:\Users\m1sty\Desktop\Programing\DataBaseApp\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.MainPageForm.resources
+C:\Users\m1sty\Desktop\Programing\DataBaseApp\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.Properties.Resources.resources
+C:\Users\m1sty\Desktop\Programing\DataBaseApp\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.csproj.GenerateResource.cache
+C:\Users\m1sty\Desktop\Programing\DataBaseApp\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.csproj.CoreCompileInputs.cache
+C:\Users\m1sty\Desktop\Programing\DataBaseApp\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.exe
+C:\Users\m1sty\Desktop\Programing\DataBaseApp\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.pdb
+C:\Users\m1sty\Desktop\Programing\DataBaseApp\DatabaseAppISUCT\bin\Debug\DatabaseAppISUCT.exe.config
+C:\Users\m1sty\Desktop\Programing\DataBaseApp\DatabaseAppISUCT\bin\Debug\DatabaseAppISUCT.exe
+C:\Users\m1sty\Desktop\Programing\DataBaseApp\DatabaseAppISUCT\bin\Debug\DatabaseAppISUCT.pdb
+C:\Users\m1sty\Desktop\Programing\DataBaseApp\DatabaseAppISUCT\bin\Debug\MaterialSkin.dll
+C:\Users\m1sty\Desktop\Programing\DataBaseApp\DatabaseAppISUCT\obj\Debug\DatabaseAppISUCT.csproj.CopyComplete
