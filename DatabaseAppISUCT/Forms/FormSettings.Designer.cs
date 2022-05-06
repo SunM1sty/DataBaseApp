@@ -48,6 +48,7 @@
             this.Controls.Add(this.materialSwitch1);
             this.Name = "FormSettings";
             this.Text = "Settings";
+            this.Load += new System.EventHandler(this.FormSettings_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

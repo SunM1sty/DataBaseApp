@@ -7,7 +7,7 @@ namespace DatabaseAppISUCT
 {
     public partial class FormSettings : MaterialForm
     {
-        static MaterialSkinManager ThemeManager = MaterialSkinManager.Instance;
+        public static MaterialSkinManager ThemeManager = MaterialSkinManager.Instance;
         public FormSettings()
         {
             InitializeComponent();
@@ -41,6 +41,11 @@ namespace DatabaseAppISUCT
                     ThemeManager.Theme = MaterialSkinManager.Themes.LIGHT;
                 }
             }
+        }
+
+        private void FormSettings_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

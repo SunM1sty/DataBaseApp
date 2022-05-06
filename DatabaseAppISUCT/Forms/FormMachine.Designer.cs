@@ -175,6 +175,7 @@ namespace DatabaseAppISUCT
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -227,6 +228,7 @@ namespace DatabaseAppISUCT
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.machineDataGridView.DataSource = this.machineBindingSource;
+            this.machineDataGridView.GridColor = System.Drawing.SystemColors.Control;
             this.machineDataGridView.Location = new System.Drawing.Point(12, 28);
             this.machineDataGridView.Name = "machineDataGridView";
             this.machineDataGridView.Size = new System.Drawing.Size(384, 421);
@@ -309,7 +311,7 @@ namespace DatabaseAppISUCT
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // Form3
+            // FormMachine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

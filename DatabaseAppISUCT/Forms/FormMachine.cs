@@ -16,6 +16,10 @@ namespace DatabaseAppISUCT
             this.ControlBox = false;
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
+            if (FormSettings.ThemeManager.Theme == MaterialSkinManager.Themes.DARK)
+            {
+                this.machineDataGridView.ForeColor = Color.Black;
+            }
         }
 
         private void machineBindingNavigatorSaveItem_Click(object sender, EventArgs e)
