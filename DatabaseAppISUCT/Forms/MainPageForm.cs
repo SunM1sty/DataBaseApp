@@ -133,6 +133,11 @@ namespace DatabaseAppISUCT
             _currentButton = null;
             btnCloseChildeForm.Visible = false;
         }
+
+        private void MainPageForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

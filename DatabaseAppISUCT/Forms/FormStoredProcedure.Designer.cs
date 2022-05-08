@@ -25,6 +25,8 @@
             System.Windows.Forms.Label machineIDLabel;
             System.Windows.Forms.Label dateStartLabel;
             System.Windows.Forms.Label typeRepairIDLabel;
+            System.Windows.Forms.Label typeRepairIDLabel1;
+            System.Windows.Forms.Label machineIDLabel1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStoredProcedure));
             this.repairBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.repairBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -47,13 +49,17 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.repairTableAdapter = new DatabaseAppISUCT.DataSet.DataSet1TableAdapters.RepairTableAdapter();
             this.tableAdapterManager = new DatabaseAppISUCT.DataSet.DataSet1TableAdapters.TableAdapterManager();
-            this.machineIDTextBox = new System.Windows.Forms.TextBox();
             this.dateStartDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.typeRepairIDTextBox = new System.Windows.Forms.TextBox();
             this.btnInsert = new MaterialSkin.Controls.MaterialButton();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.typeRepairIDTextBox = new System.Windows.Forms.TextBox();
+            this.machineIDTextBox = new System.Windows.Forms.TextBox();
             machineIDLabel = new System.Windows.Forms.Label();
             dateStartLabel = new System.Windows.Forms.Label();
             typeRepairIDLabel = new System.Windows.Forms.Label();
+            typeRepairIDLabel1 = new System.Windows.Forms.Label();
+            machineIDLabel1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.repairBindingNavigator)).BeginInit();
             this.repairBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.repairBindingSource)).BeginInit();
@@ -66,9 +72,9 @@
             machineIDLabel.AutoSize = true;
             machineIDLabel.Location = new System.Drawing.Point(592, 28);
             machineIDLabel.Name = "machineIDLabel";
-            machineIDLabel.Size = new System.Drawing.Size(62, 13);
+            machineIDLabel.Size = new System.Drawing.Size(51, 13);
             machineIDLabel.TabIndex = 2;
-            machineIDLabel.Text = "MachineID:";
+            machineIDLabel.Text = "Machine:";
             // 
             // dateStartLabel
             // 
@@ -84,9 +90,27 @@
             typeRepairIDLabel.AutoSize = true;
             typeRepairIDLabel.Location = new System.Drawing.Point(592, 61);
             typeRepairIDLabel.Name = "typeRepairIDLabel";
-            typeRepairIDLabel.Size = new System.Drawing.Size(76, 13);
+            typeRepairIDLabel.Size = new System.Drawing.Size(65, 13);
             typeRepairIDLabel.TabIndex = 6;
-            typeRepairIDLabel.Text = "TypeRepairID:";
+            typeRepairIDLabel.Text = "TypeRepair:";
+            // 
+            // typeRepairIDLabel1
+            // 
+            typeRepairIDLabel1.AutoSize = true;
+            typeRepairIDLabel1.Location = new System.Drawing.Point(616, 272);
+            typeRepairIDLabel1.Name = "typeRepairIDLabel1";
+            typeRepairIDLabel1.Size = new System.Drawing.Size(131, 13);
+            typeRepairIDLabel1.TabIndex = 24;
+            typeRepairIDLabel1.Text = "TypeRepairID (Additional):";
+            // 
+            // machineIDLabel1
+            // 
+            machineIDLabel1.AutoSize = true;
+            machineIDLabel1.Location = new System.Drawing.Point(616, 238);
+            machineIDLabel1.Name = "machineIDLabel1";
+            machineIDLabel1.Size = new System.Drawing.Size(117, 13);
+            machineIDLabel1.TabIndex = 25;
+            machineIDLabel1.Text = "MachineID (Additional):";
             // 
             // repairBindingNavigator
             // 
@@ -142,6 +166,7 @@
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            this.bindingNavigatorMoveFirstItem.Click += new System.EventHandler(this.bindingNavigatorMoveFirstItem_Click);
             // 
             // bindingNavigatorMovePreviousItem
             // 
@@ -151,6 +176,7 @@
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            this.bindingNavigatorMovePreviousItem.Click += new System.EventHandler(this.bindingNavigatorMovePreviousItem_Click);
             // 
             // bindingNavigatorSeparator
             // 
@@ -180,6 +206,7 @@
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
+            this.bindingNavigatorMoveNextItem.Click += new System.EventHandler(this.bindingNavigatorMoveNextItem_Click);
             // 
             // bindingNavigatorMoveLastItem
             // 
@@ -189,6 +216,7 @@
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
+            this.bindingNavigatorMoveLastItem.Click += new System.EventHandler(this.bindingNavigatorMoveLastItem_Click);
             // 
             // bindingNavigatorSeparator2
             // 
@@ -266,14 +294,6 @@
             this.tableAdapterManager.Type_RepairTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = DatabaseAppISUCT.DataSet.DataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // machineIDTextBox
-            // 
-            this.machineIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.repairBindingSource, "MachineID", true));
-            this.machineIDTextBox.Location = new System.Drawing.Point(697, 25);
-            this.machineIDTextBox.Name = "machineIDTextBox";
-            this.machineIDTextBox.Size = new System.Drawing.Size(138, 20);
-            this.machineIDTextBox.TabIndex = 3;
-            // 
             // dateStartDateTimePicker
             // 
             this.dateStartDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.repairBindingSource, "DateStart", true));
@@ -281,14 +301,6 @@
             this.dateStartDateTimePicker.Name = "dateStartDateTimePicker";
             this.dateStartDateTimePicker.Size = new System.Drawing.Size(138, 20);
             this.dateStartDateTimePicker.TabIndex = 5;
-            // 
-            // typeRepairIDTextBox
-            // 
-            this.typeRepairIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.repairBindingSource, "TypeRepairID", true));
-            this.typeRepairIDTextBox.Location = new System.Drawing.Point(697, 58);
-            this.typeRepairIDTextBox.Name = "typeRepairIDTextBox";
-            this.typeRepairIDTextBox.Size = new System.Drawing.Size(138, 20);
-            this.typeRepairIDTextBox.TabIndex = 7;
             // 
             // btnInsert
             // 
@@ -311,18 +323,56 @@
             this.btnInsert.UseVisualStyleBackColor = true;
             this.btnInsert.Click += new System.EventHandler(this.materialButton1_Click);
             // 
-            // Form6
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(697, 58);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(355, 21);
+            this.comboBox1.TabIndex = 24;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(697, 26);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(355, 21);
+            this.comboBox2.TabIndex = 23;
+            // 
+            // typeRepairIDTextBox
+            // 
+            this.typeRepairIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.repairBindingSource, "TypeRepairID", true));
+            this.typeRepairIDTextBox.Location = new System.Drawing.Point(795, 265);
+            this.typeRepairIDTextBox.Name = "typeRepairIDTextBox";
+            this.typeRepairIDTextBox.ReadOnly = true;
+            this.typeRepairIDTextBox.Size = new System.Drawing.Size(97, 20);
+            this.typeRepairIDTextBox.TabIndex = 25;
+            // 
+            // machineIDTextBox
+            // 
+            this.machineIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.repairBindingSource, "MachineID", true));
+            this.machineIDTextBox.Location = new System.Drawing.Point(795, 235);
+            this.machineIDTextBox.Name = "machineIDTextBox";
+            this.machineIDTextBox.ReadOnly = true;
+            this.machineIDTextBox.Size = new System.Drawing.Size(97, 20);
+            this.machineIDTextBox.TabIndex = 26;
+            // 
+            // FormStoredProcedure
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(841, 461);
+            this.ClientSize = new System.Drawing.Size(1174, 469);
+            this.Controls.Add(machineIDLabel1);
+            this.Controls.Add(this.machineIDTextBox);
+            this.Controls.Add(typeRepairIDLabel1);
+            this.Controls.Add(this.typeRepairIDTextBox);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(typeRepairIDLabel);
-            this.Controls.Add(this.typeRepairIDTextBox);
             this.Controls.Add(dateStartLabel);
             this.Controls.Add(this.dateStartDateTimePicker);
             this.Controls.Add(machineIDLabel);
-            this.Controls.Add(this.machineIDTextBox);
             this.Controls.Add(this.repairDataGridView);
             this.Controls.Add(this.repairBindingNavigator);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -363,9 +413,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.TextBox machineIDTextBox;
         private System.Windows.Forms.DateTimePicker dateStartDateTimePicker;
-        private System.Windows.Forms.TextBox typeRepairIDTextBox;
         private MaterialSkin.Controls.MaterialButton btnInsert;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox typeRepairIDTextBox;
+        private System.Windows.Forms.TextBox machineIDTextBox;
     }
 }

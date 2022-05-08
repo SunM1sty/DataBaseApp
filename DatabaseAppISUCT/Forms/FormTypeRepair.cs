@@ -1,6 +1,7 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -74,6 +75,12 @@ namespace DatabaseAppISUCT
                     MessageBox.Show("Необходимо указывать Название, Nulls не разрешены");
                 }
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+
         }
     }
 }

@@ -212,7 +212,7 @@
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(210, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(874, 60);
+            this.panelTitleBar.Size = new System.Drawing.Size(1074, 60);
             this.panelTitleBar.TabIndex = 1;
             // 
             // btnCloseChildeForm
@@ -234,7 +234,7 @@
             this.labelTopicTilte.AutoSize = true;
             this.labelTopicTilte.Font = new System.Drawing.Font("Leelawadee UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTopicTilte.ForeColor = System.Drawing.Color.White;
-            this.labelTopicTilte.Location = new System.Drawing.Point(403, 15);
+            this.labelTopicTilte.Location = new System.Drawing.Point(503, 15);
             this.labelTopicTilte.Name = "labelTopicTilte";
             this.labelTopicTilte.Size = new System.Drawing.Size(72, 30);
             this.labelTopicTilte.TabIndex = 0;
@@ -246,20 +246,21 @@
             this.panelChilde.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChilde.Location = new System.Drawing.Point(210, 60);
             this.panelChilde.Name = "panelChilde";
-            this.panelChilde.Size = new System.Drawing.Size(874, 481);
+            this.panelChilde.Size = new System.Drawing.Size(1074, 481);
             this.panelChilde.TabIndex = 2;
             // 
             // MainPageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 541);
+            this.ClientSize = new System.Drawing.Size(1284, 541);
             this.Controls.Add(this.panelChilde);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainPageForm";
-            this.Text = "MainPageForm";
+            this.Text = "CRUD Database";
+            this.Load += new System.EventHandler(this.MainPageForm_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelTopMenu.ResumeLayout(false);
             this.panelTopMenu.PerformLayout();

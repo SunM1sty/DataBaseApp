@@ -9,6 +9,8 @@ namespace DatabaseAppISUCT
 {
     public partial class FormStoredProcedure : MaterialForm
     {
+        static string _connection = "Data Source=DESKTOP-TT3J386\\SQLEXPRESS;Initial Catalog=machine;Persist Security Info=True;User ID=M1sty;Password=5uJ63SpXER";
+
         public FormStoredProcedure()
         {
             InitializeComponent();
@@ -19,6 +21,28 @@ namespace DatabaseAppISUCT
             if (FormSettings.ThemeManager.Theme == MaterialSkinManager.Themes.DARK)
             {
                 this.repairDataGridView.ForeColor = Color.Black;
+            }
+            using (SqlConnection connection = new SqlConnection(_connection))
+            {
+                connection.Open();
+                string commText = "SELECT * FROM BasicTypeRepairInformation";
+                using (SqlCommand firstCommand = new SqlCommand(commText, connection))
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter(firstCommand);
+                    adapter.Fill(this.dataSet1.BasicTypeRepairInformation);
+                    comboBox2.DataSource = this.dataSet1.BasicTypeRepairInformation;
+                    comboBox2.DisplayMember = "Description";
+                    comboBox2.ValueMember = "TypeRepairID";
+                }
+                string anotherCommand = "Select * from AllMachineData";
+                using (SqlCommand secondCommand = new SqlCommand(anotherCommand, connection))
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter(secondCommand);
+                    adapter.Fill(this.dataSet1.AllMachineData);
+                    comboBox1.DataSource = this.dataSet1.AllMachineData;
+                    comboBox1.DisplayMember = "Description";
+                    comboBox1.ValueMember = "MachineID";
+                }
             }
         }
 
@@ -59,8 +83,8 @@ namespace DatabaseAppISUCT
         {
             try
             {
-                var machineId = Convert.ToInt32(machineIDTextBox.Text);
-                var typeMachineId = Convert.ToInt32(typeRepairIDTextBox.Text);
+                var machineId = Convert.ToInt32(comboBox2.SelectedValue);
+                var typeMachineId = Convert.ToInt32(comboBox1.SelectedValue);
                 var dateStartId = Convert.ToDateTime(dateStartDateTimePicker.Text);
                 this.repairTableAdapter.FillBy(this.dataSet1.Repair, machineId, typeMachineId, dateStartId);
                 this.repairTableAdapter.Fill(this.dataSet1.Repair);
@@ -77,6 +101,62 @@ namespace DatabaseAppISUCT
                 }
                 this.repairTableAdapter.Fill(this.dataSet1.Repair);
             }
+        }
+
+        private void bindingNavigator(object sender, EventArgs e)
+        {
+            using (SqlConnection connection = new SqlConnection(_connection))
+            {
+                connection.Open();
+                var machineID = Convert.ToInt32(machineIDTextBox.Text);
+                string commText = "SELECT Description FROM AllMachineData where MachineID = @MachineID";
+                using (SqlCommand thisCommand = connection.CreateCommand())
+                {
+                    thisCommand.CommandText = commText;
+                    thisCommand.Parameters.AddWithValue("@MachineID", machineID);
+                    SqlDataReader reader = thisCommand.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        comboBox2.Text = reader["Description"].ToString();
+                    }
+                }
+            }
+            using (SqlConnection connection = new SqlConnection(_connection))
+            {
+                connection.Open();
+                var typeRepairID = Convert.ToInt32(typeRepairIDTextBox.Text);
+                string commText = "SELECT Description FROM BasicTypeRepairInformation where TypeRepairID = @TypeRepairID";
+                using (SqlCommand thisCommand = connection.CreateCommand())
+                {
+                    thisCommand.CommandText = commText;
+                    thisCommand.Parameters.AddWithValue("@TypeRepairID", typeRepairID);
+                    SqlDataReader reader = thisCommand.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        comboBox1.Text = reader["Description"].ToString();
+                    }
+                }
+            }
+        }
+
+        private void bindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
+        {
+            bindingNavigator(sender, e);
+        }
+
+        private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
+        {
+            bindingNavigator(sender, e);
+        }
+
+        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
+        {
+            bindingNavigator(sender, e);
+        }
+
+        private void bindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
+        {
+            bindingNavigator(sender, e);
         }
     }
 }
