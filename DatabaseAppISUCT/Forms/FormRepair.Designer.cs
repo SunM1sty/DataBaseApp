@@ -178,7 +178,7 @@ namespace DatabaseAppISUCT
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
-            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigator);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -188,7 +188,7 @@ namespace DatabaseAppISUCT
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            this.bindingNavigatorMoveFirstItem.Click += new System.EventHandler(this.bindingNavigatorMoveFirstItem_Click);
+            this.bindingNavigatorMoveFirstItem.Click += new System.EventHandler(this.bindingNavigator);
             // 
             // bindingNavigatorMovePreviousItem
             // 
@@ -198,7 +198,7 @@ namespace DatabaseAppISUCT
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            this.bindingNavigatorMovePreviousItem.Click += new System.EventHandler(this.bindingNavigatorMovePreviousItem_Click);
+            this.bindingNavigatorMovePreviousItem.Click += new System.EventHandler(this.bindingNavigator);
             // 
             // bindingNavigatorSeparator
             // 
@@ -228,7 +228,7 @@ namespace DatabaseAppISUCT
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
-            this.bindingNavigatorMoveNextItem.Click += new System.EventHandler(this.bindingNavigatorMoveNextItem_Click);
+            this.bindingNavigatorMoveNextItem.Click += new System.EventHandler(this.bindingNavigator);
             // 
             // bindingNavigatorMoveLastItem
             // 
@@ -238,7 +238,7 @@ namespace DatabaseAppISUCT
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
-            this.bindingNavigatorMoveLastItem.Click += new System.EventHandler(this.bindingNavigatorMoveLastItem_Click);
+            this.bindingNavigatorMoveLastItem.Click += new System.EventHandler(this.bindingNavigator);
             // 
             // bindingNavigatorSeparator2
             // 
@@ -252,7 +252,7 @@ namespace DatabaseAppISUCT
             this.repairBindingNavigatorSaveItem.Name = "repairBindingNavigatorSaveItem";
             this.repairBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.repairBindingNavigatorSaveItem.Text = "Save Data";
-            this.repairBindingNavigatorSaveItem.Click += new System.EventHandler(this.repairBindingNavigatorSaveItem_Click);
+            this.repairBindingNavigatorSaveItem.Click += new System.EventHandler(this.bindingNavigator);
             // 
             // repairDataGridView
             // 

@@ -9,7 +9,7 @@ namespace DatabaseAppISUCT
 {
     public partial class FormStoredProcedure : MaterialForm
     {
-        static string _connection = "Data Source=DESKTOP-TT3J386\\SQLEXPRESS;Initial Catalog=machine;Persist Security Info=True;User ID=M1sty;Password=5uJ63SpXER";
+        private readonly string _connection = "Data Source=DESKTOP-TT3J386\\SQLEXPRESS;Initial Catalog=machine;Persist Security Info=True;User ID=M1sty;Password=5uJ63SpXER";
 
         public FormStoredProcedure()
         {
@@ -137,26 +137,6 @@ namespace DatabaseAppISUCT
                     }
                 }
             }
-        }
-
-        private void bindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
-        {
-            bindingNavigator(sender, e);
-        }
-
-        private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
-        {
-            bindingNavigator(sender, e);
-        }
-
-        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
-        {
-            bindingNavigator(sender, e);
-        }
-
-        private void bindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
-        {
-            bindingNavigator(sender, e);
         }
     }
 }

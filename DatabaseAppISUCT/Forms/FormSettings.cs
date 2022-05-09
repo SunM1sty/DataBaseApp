@@ -11,12 +11,15 @@ namespace DatabaseAppISUCT
         public FormSettings()
         {
             InitializeComponent();
+            #region UISettings
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.ControlBox = false;
             var materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
+            #endregion
         }
 
+        #region LoadUISettingsMethod
         private void materialSwitch1_CheckedChanged(object sender, EventArgs e)
         {
             if (materialSwitch1.Checked)
@@ -42,10 +45,6 @@ namespace DatabaseAppISUCT
                 }
             }
         }
-
-        private void FormSettings_Load(object sender, EventArgs e)
-        {
-
-        }
+        #endregion
     }
 }

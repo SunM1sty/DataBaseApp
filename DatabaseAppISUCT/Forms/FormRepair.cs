@@ -9,11 +9,24 @@ namespace DatabaseAppISUCT
 {
     public partial class FormRepair : MaterialForm
     {
-        static string _connection = "Data Source=DESKTOP-TT3J386\\SQLEXPRESS;Initial Catalog=machine;Persist Security Info=True;User ID=M1sty;Password=5uJ63SpXER";
+
+        #region Fields
+        static readonly string _connection = "Data Source=DESKTOP-TT3J386\\SQLEXPRESS;Initial Catalog=machine;Persist Security Info=True;User ID=M1sty;Password=5uJ63SpXER";
+        private DateTime _dateStart;
+        private DateTime _dateEnd;
+        private int _typeRepairID;
+        private int _machineID;
+        private int _repairID;
+        SqlConnection connection = new SqlConnection(_connection);
+        private string _commandText;
+        private SqlDataReader _reader;
+        private SqlDataAdapter _adapter;
+        #endregion
 
         public FormRepair()
         {
             InitializeComponent();
+            #region UISettings
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.ControlBox = false;
             var materialSkinManager = MaterialSkinManager.Instance;
@@ -22,44 +35,29 @@ namespace DatabaseAppISUCT
             {
                 this.repairDataGridView.ForeColor = Color.Black;
             }
-            using (SqlConnection connection = new SqlConnection(_connection))
+            #endregion
+            connection.Open();
+            _commandText = "SELECT * FROM BasicTypeRepairInformation";
+            using (SqlCommand firstCommand = new SqlCommand(_commandText, connection))
             {
-                connection.Open();
-                string commText = "SELECT * FROM BasicTypeRepairInformation";
-                using (SqlCommand firstCommand = new SqlCommand(commText, connection))
-                {
-                    SqlDataAdapter adapter = new SqlDataAdapter(firstCommand);
-                    adapter.Fill(this.dataSet1.BasicTypeRepairInformation);
-                    comboBox1.DataSource = this.dataSet1.BasicTypeRepairInformation;
-                    comboBox1.DisplayMember = "Description";
-                    comboBox1.ValueMember = "TypeRepairID";
-                }
-                string anotherCommand = "Select * from AllMachineData";
-                using (SqlCommand secondCommand = new SqlCommand(anotherCommand, connection))
-                {
-                    SqlDataAdapter adapter = new SqlDataAdapter(secondCommand);
-                    adapter.Fill(this.dataSet1.AllMachineData);
-                    comboBox2.DataSource = this.dataSet1.AllMachineData;
-                    comboBox2.DisplayMember = "Description";
-                    comboBox2.ValueMember = "MachineID";
-                }
+                _adapter = new SqlDataAdapter(firstCommand);
+                _adapter.Fill(this.dataSet1.BasicTypeRepairInformation);
+                comboBox1.DataSource = this.dataSet1.BasicTypeRepairInformation;
+                comboBox1.DisplayMember = "Description";
+                comboBox1.ValueMember = "TypeRepairID";
+            }
+            string anotherCommand = "Select * from AllMachineData";
+            using (SqlCommand secondCommand = new SqlCommand(anotherCommand, connection))
+            {
+                _adapter = new SqlDataAdapter(secondCommand);
+                _adapter.Fill(this.dataSet1.AllMachineData);
+                comboBox2.DataSource = this.dataSet1.AllMachineData;
+                comboBox2.DisplayMember = "Description";
+                comboBox2.ValueMember = "MachineID";
             }
         }
 
-        private void repairBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.Validate();
-                this.repairBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.dataSet1);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                this.repairTableAdapter.Fill(this.dataSet1.Repair);
-            }
-        }
+        #region LoadUISettingMethod
         private void LoadTheme()
         {
             foreach (Control btnD in this.Controls)
@@ -73,6 +71,7 @@ namespace DatabaseAppISUCT
                 }
             }
         }
+        #endregion
 
         private void FormRepair_Load(object sender, EventArgs e)
         {
@@ -88,13 +87,14 @@ namespace DatabaseAppISUCT
         {
             try
             {
-                var dateStart = Convert.ToDateTime(dateStartDateTimePicker.Text);
-                var dateEnd = Convert.ToDateTime(endDateDateTimePicker.Text);
-                var typeRepairID = Convert.ToInt32(comboBox1.SelectedValue);
-                var machineID = Convert.ToInt32(comboBox2.SelectedValue);
-                this.repairTableAdapter.InsertQuery(dateStart, typeRepairID, machineID, dateEnd);
+                _dateStart = Convert.ToDateTime(dateStartDateTimePicker.Text);
+                _dateEnd = Convert.ToDateTime(endDateDateTimePicker.Text);
+                _typeRepairID = Convert.ToInt32(comboBox1.SelectedValue);
+                _machineID = Convert.ToInt32(comboBox2.SelectedValue);
+                this.repairTableAdapter.InsertQuery(_dateStart, _typeRepairID, _machineID, _dateEnd);
                 this.repairTableAdapter.Fill(this.dataSet1.Repair);
             }
+            #region CatchingExceptions
             catch (SqlException ex)
             {
                 if (ex.Message.Contains("R_27"))
@@ -117,34 +117,32 @@ namespace DatabaseAppISUCT
                     MessageBox.Show("Необходимо указывать MachineID, Nulls не разрешены");
                 }
             }
+            #endregion
         }
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
             try
             {
-                var dateStart = Convert.ToDateTime(dateStartDateTimePicker.Text);
-                var dateEnd = Convert.ToDateTime(endDateDateTimePicker.Text);
-                var typeRepairID = Convert.ToInt32(comboBox1.SelectedValue);
-                var machineID = Convert.ToInt32(comboBox2.SelectedValue);
-                var repairID = Convert.ToInt32(repairIDTextBox.Text);
-                using (SqlConnection connection = new SqlConnection(_connection))
+                _dateStart = Convert.ToDateTime(dateStartDateTimePicker.Text);
+                _dateEnd = Convert.ToDateTime(endDateDateTimePicker.Text);
+                _typeRepairID = Convert.ToInt32(comboBox1.SelectedValue);
+                _machineID = Convert.ToInt32(comboBox2.SelectedValue);
+                _repairID = Convert.ToInt32(repairIDTextBox.Text);
+                _commandText = "UPDATE [dbo].[Repair] SET [DateStart] = @DateStart, [TypeRepairID] = @TypeRepairID, [MachineID] = @MachineID, [EndDate] = @EndDate WHERE [RepairID] = @Original_RepairID";
+                using (SqlCommand command = new SqlCommand(_commandText, connection))
                 {
-                    connection.Open();
-                    string commText = "UPDATE [dbo].[Repair] SET [DateStart] = @DateStart, [TypeRepairID] = @TypeRepairID, [MachineID] = @MachineID, [EndDate] = @EndDate WHERE [RepairID] = @Original_RepairID";
-                    using (SqlCommand command = new SqlCommand(commText, connection))
-                    {
-                        SqlDataAdapter adapter = new SqlDataAdapter(command);
-                        command.Parameters.AddWithValue("@DateStart", dateStart);
-                        command.Parameters.AddWithValue("@TypeRepairID", typeRepairID);
-                        command.Parameters.AddWithValue("@Original_RepairID", repairID);
-                        command.Parameters.AddWithValue("@MachineID", machineID);
-                        command.Parameters.AddWithValue("@EndDate", dateEnd);
-                        adapter.Fill(this.dataSet1.Repair);
-                        this.repairTableAdapter.Fill(this.dataSet1.Repair);
-                    }
+                    _adapter = new SqlDataAdapter(command);
+                    command.Parameters.AddWithValue("@DateStart", _dateStart);
+                    command.Parameters.AddWithValue("@TypeRepairID", _typeRepairID);
+                    command.Parameters.AddWithValue("@Original_RepairID", _repairID);
+                    command.Parameters.AddWithValue("@MachineID", _machineID);
+                    command.Parameters.AddWithValue("@EndDate", _dateEnd);
+                    _adapter.Fill(this.dataSet1.Repair);
+                    this.repairTableAdapter.Fill(this.dataSet1.Repair);
                 }
             }
+            #region CatchingExceptions
             catch (SqlException ex)
             {
                 if (ex.Message.Contains("R_27"))
@@ -167,67 +165,51 @@ namespace DatabaseAppISUCT
                     MessageBox.Show("Необходимо указывать MachineID, Nulls не разрешены");
                 }
             }
+            #endregion
         }
 
         private void bindingNavigator(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(_connection))
+            try
             {
-                connection.Open();
-                var machineID = Convert.ToInt32(machineIDTextBox.Text);
-                string commText = "SELECT Description FROM AllMachineData where MachineID = @MachineID";
-                using (SqlCommand thisCommand = connection.CreateCommand())
-                {
-                    thisCommand.CommandText = commText;
-                    thisCommand.Parameters.AddWithValue("@MachineID", machineID);
-                    SqlDataReader reader = thisCommand.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        comboBox2.Text = reader["Description"].ToString();
-                    }
-                }
+                this.Validate();
+                this.repairBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.dataSet1);
             }
-            using (SqlConnection connection = new SqlConnection(_connection))
+            #region CatchingExceptions
+            catch (Exception ex)
             {
-                connection.Open();
-                var typeRepairID = Convert.ToInt32(typeRepairIDTextBox.Text);
-                string commText = "SELECT Description FROM BasicTypeRepairInformation where TypeRepairID = @TypeRepairID";
-                using (SqlCommand thisCommand = connection.CreateCommand())
-                {
-                    thisCommand.CommandText = commText;
-                    thisCommand.Parameters.AddWithValue("@TypeRepairID", typeRepairID);
-                    SqlDataReader reader = thisCommand.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        comboBox1.Text = reader["Description"].ToString();
-                    }
-                }
+                MessageBox.Show(ex.Message);
+                this.repairTableAdapter.Fill(this.dataSet1.Repair);
             }
-        }
+            #endregion
 
-        private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
-        {
-            bindingNavigator(sender, e);
-        }
-
-        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
-        {
-            bindingNavigator(sender, e);
-        }
-
-        private void bindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
-        {
-            bindingNavigator(sender, e);
-        }
-
-        private void bindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
-        {
-            bindingNavigator(sender, e);
-        }
-
-        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
-        {
-            bindingNavigator(sender, e);
+            _machineID = Convert.ToInt32(machineIDTextBox.Text);
+            _commandText = "SELECT Description FROM AllMachineData where MachineID = @MachineID";
+            using (SqlCommand thisCommand = connection.CreateCommand())
+            {
+                thisCommand.CommandText = _commandText;
+                thisCommand.Parameters.AddWithValue("@MachineID", _machineID);
+                _reader = thisCommand.ExecuteReader();
+                while (_reader.Read())
+                {
+                    comboBox2.Text = _reader["Description"].ToString();
+                }
+                _reader.Close();
+            }
+            _typeRepairID = Convert.ToInt32(typeRepairIDTextBox.Text);
+            _commandText = "SELECT Description FROM BasicTypeRepairInformation where TypeRepairID = @TypeRepairID";
+            using (SqlCommand thisCommand = connection.CreateCommand())
+            {
+                thisCommand.CommandText = _commandText;
+                thisCommand.Parameters.AddWithValue("@TypeRepairID", _typeRepairID);
+                _reader = thisCommand.ExecuteReader();
+                while (_reader.Read())
+                {
+                    comboBox1.Text = _reader["Description"].ToString();
+                }
+                _reader.Close();
+            }
         }
     }
 }

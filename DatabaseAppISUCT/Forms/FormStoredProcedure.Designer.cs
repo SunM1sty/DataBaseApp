@@ -166,7 +166,7 @@
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            this.bindingNavigatorMoveFirstItem.Click += new System.EventHandler(this.bindingNavigatorMoveFirstItem_Click);
+            this.bindingNavigatorMoveFirstItem.Click += new System.EventHandler(this.bindingNavigator);
             // 
             // bindingNavigatorMovePreviousItem
             // 
@@ -176,7 +176,7 @@
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            this.bindingNavigatorMovePreviousItem.Click += new System.EventHandler(this.bindingNavigatorMovePreviousItem_Click);
+            this.bindingNavigatorMovePreviousItem.Click += new System.EventHandler(this.bindingNavigator);
             // 
             // bindingNavigatorSeparator
             // 
@@ -206,7 +206,7 @@
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
-            this.bindingNavigatorMoveNextItem.Click += new System.EventHandler(this.bindingNavigatorMoveNextItem_Click);
+            this.bindingNavigatorMoveNextItem.Click += new System.EventHandler(this.bindingNavigator);
             // 
             // bindingNavigatorMoveLastItem
             // 
@@ -216,7 +216,7 @@
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
-            this.bindingNavigatorMoveLastItem.Click += new System.EventHandler(this.bindingNavigatorMoveLastItem_Click);
+            this.bindingNavigatorMoveLastItem.Click += new System.EventHandler(this.bindingNavigator);
             // 
             // bindingNavigatorSeparator2
             // 
